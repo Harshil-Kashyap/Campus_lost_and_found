@@ -1,0 +1,26 @@
+classDiagram
+    class User {
+      +id
+      +name
+      +email
+      +role
+    }
+    class Item {
+      +id
+      +kind
+      +title
+      +category
+      +place
+      +date
+      +status
+    }
+    class Claim {
+      +id
+      +item_id
+      +user_id
+      +note
+      +status
+    }
+    User "1" --> "many" Item : reports
+    User "1" --> "many" Claim : submits
+    Item "1" --> "many" Claim : receives

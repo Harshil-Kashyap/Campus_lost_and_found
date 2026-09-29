@@ -1,0 +1,12 @@
+flowchart TD
+    A[Open application] --> B[Login or Register]
+    B --> C[Browse or Report Item]
+    C --> D{Found an item of interest?}
+    D -- No --> C
+    D -- Yes --> E[Submit Claim]
+    E --> F[Admin Reviews Claim]
+    F --> G{Approve?}
+    G -- Yes --> H[Item marked Returned]
+    G -- No --> I[Claim Rejected]
+    H --> J[End]
+    I --> J

@@ -1,0 +1,20 @@
+sequenceDiagram
+    actor Student
+    participant UI as User Interface
+    participant Claim as Claim Module
+    participant DB as SQLite
+    participant Admin
+    Student->>UI: Select item and submit claim
+    UI->>Claim: add_claim(item, student, note)
+    Claim->>DB: Insert claim
+    DB-->>Claim: Saved
+    Claim-->>UI: Success message
+    Admin->>UI: Open admin claims
+    UI->>Claim: get_claims(admin)
+    Claim->>DB: Read claims
+    DB-->>Claim: Claim list
+    Claim-->>UI: Claim list
+    Admin->>UI: Approve claim
+    UI->>Claim: set_claim(id, approved)
+    Claim->>DB: Update claim and item
+    DB-->>Claim: Updated

@@ -1,0 +1,30 @@
+erDiagram
+    USERS ||--o{ ITEMS : reports
+    USERS ||--o{ CLAIMS : submits
+    ITEMS ||--o{ CLAIMS : receives
+    USERS {
+      int id PK
+      string name
+      string email UK
+      string pwd
+      string role
+    }
+    ITEMS {
+      int id PK
+      int user_id FK
+      string kind
+      string title
+      string cat
+      string place
+      string day
+      string info
+      string status
+    }
+    CLAIMS {
+      int id PK
+      int item_id FK
+      int user_id FK
+      string note
+      string status
+      datetime created
+    }
