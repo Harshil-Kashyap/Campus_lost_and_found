@@ -31,6 +31,7 @@ python3 app.py
 Student:
 - Email: student@campus.local
 - Password: student123
+
 Admin:
 - Email: admin@campus.local
 - Password: admin123
